@@ -1,0 +1,25 @@
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    width: 150%;
+    border: 3px solid #122027;
+    border-radius: 5px;
+}
+
+.contact-name {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list1 {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    padding: 3%;
+}
+
+.contact-title {
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+}

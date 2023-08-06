@@ -14,10 +14,14 @@ const ContactList = () => {
 
     return (
         <div className="contact-list">
-            <h2>Contact List</h2>
-            {contacts.map((contact) => (
-                <ContactCard key={contact.id} contact={contact} />
-            ))}
+            <div className="contact-title">
+                <h2>Contact List</h2>
+            </div>
+            <div className="contact-list1">
+                {contacts.map((contact) => (
+                    <ContactCard key={contact.id} contact={contact} />
+                ))}
+            </div>
         </div>
     );
 };
