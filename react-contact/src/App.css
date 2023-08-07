@@ -2,3 +2,8 @@
     display: flex;
     justify-content: center;
 }
+
+.container-map {
+    border: 1px solid #122027;
+    border-radius: 5px;
+}

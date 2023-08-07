@@ -1,1 +1,28 @@
-.contact-form {}
+input {
+    width: 20%;
+    padding: 8px 14px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.button {
+    background-color: #122027;
+    border: none;
+    border-radius: 2%;
+    color: white;
+    padding: 8px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}

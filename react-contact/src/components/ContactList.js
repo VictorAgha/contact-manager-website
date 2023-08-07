@@ -4,13 +4,26 @@ import ContactCard from './ContactCard';
 const ContactList = () => {
     const [contacts, setContacts] = useState([]);
 
-    // Fetch contacts from API using useEffect
     useEffect(() => {
-        fetch('http://localhost:8000/api/contacts') // Update the API endpoint URL if needed
+        fetch('http://localhost:8000/api/contacts')
             .then((response) => response.json())
             .then((data) => setContacts(data))
             .catch((error) => console.error('Error fetching contacts:', error));
     }, []);
+
+    const handleDeleteContact = (contactId) => {
+        fetch(`http://localhost:8000/api/contacts/${contactId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setContacts((prevContacts) => prevContacts.filter((contact) => contact.id !== contactId));
+            })
+            .catch((error) => console.error('Error deleting contact:', error));
+    }
 
     return (
         <div className="contact-list">
@@ -19,7 +32,7 @@ const ContactList = () => {
             </div>
             <div className="contact-list1">
                 {contacts.map((contact) => (
-                    <ContactCard key={contact.id} contact={contact} />
+                    <ContactCard key={contact.id} contact={contact} onDelete={handleDeleteContact} />
                 ))}
             </div>
         </div>
